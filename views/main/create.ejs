@@ -1,0 +1,57 @@
+<%- include('../partials/header.ejs') %>
+<% var titValue = "" %>
+<% var contValue = "" %>
+
+<% if (locals.blogDataUpdate) { %>
+            <% titValue = locals.blogDataUpdate.title; %>
+            <% contValue = locals.blogDataUpdate.content; %> 
+            <% idValue = locals.blogDataUpdate.id; %> 
+    <% } %>
+
+    <style>
+        footer{
+            position: fixed !important;
+            bottom: 0;
+        }
+    </style>
+
+    <div class="center-create-container">
+        <div class="blog-content-container">
+            <% if (locals.blogDataUpdate) { %>
+                <form class="blog-content-form" action="/update-blog" method="post">
+                    <input type="hidden" name="oldBlogId" value="<%= idValue %>">
+            <% } else{%>
+                <form class="blog-content-form" action="/add-blog" method="post">
+                <% } %>
+                <input maxlength="32" class="blog-name" type="text" name="blogName" placeholder="Blog name" required value="<%= titValue %>">
+
+                <div class="blog-content-div">
+                    <textarea class="blog-content" name="content" rows="auto" placeholder="Blog content..." required><%= contValue %></textarea>
+                </div>
+                
+                <div class="add-box-buttons-container">
+                    <button class="add-box-button rnd-all" id="crt-btn" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e3e3e3" >
+                            <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+                        </svg>
+                        <% if (locals.blogDataUpdate) { %>
+                         <h1>UPDATE</h1>
+                        <% } else{%>
+                        <h1>CREATE</h1>
+                        <% } %>
+                    </button>
+                </div>
+            </form>
+            
+        </div>
+        
+        
+    </div>
+
+    
+
+        
+
+
+<%- include('../partials/footer.ejs') %>
+<script src="functions/crt_blog.js"></script>

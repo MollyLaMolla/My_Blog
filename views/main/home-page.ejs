@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs') %>
+
+    
+
+<main class="home-page-content">
+    <div class="card-container">
+
+        <% if (locals.logged) { %>
+            <form class="add-card" action="/create" method="post" type="submit">
+                <button class="add-button" type="submit">
+                    <div class="add-circle">
+                        <div class="add-simbol-1 add-simbol"></div>
+                        <div class="add-simbol-2 add-simbol"></div>
+                    </div>
+                </button>
+            </form>
+        <% } %>
+        
+            <%- include('../partials/cards.ejs') %>
+        
+    </div>
+</main>
+
+<%- include('../partials/footer.ejs') %>
+
+<script src="../functions/reorder.js"></script>

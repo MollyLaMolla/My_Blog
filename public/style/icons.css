@@ -1,0 +1,22 @@
+.header-icon{
+  height: 24px;
+  width: 24px;
+}
+
+.header-icon svg{
+  height: 100%;
+  width: 100%;
+}
+
+.login-icon{
+  margin-right: 24px;
+}
+
+.logout-icon{
+  margin-right: 24px;
+}
+
+.github-icon{
+  margin-right: 30px;
+}
+

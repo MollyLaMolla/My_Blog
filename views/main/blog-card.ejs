@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+    <main class="blog-page-centerer">
+        
+        <div class="blog-page-content">
+            <div class="blog-card-container">
+                <div class="blog-card-header">
+                    <p><%= blogDate %><br><%= blogTime %></p>
+                    <h1><%= blogTitle %></h1>
+                </div>
+                <div class="blog-card-body">
+                    <p><%-blogContent = blogContent.replace(/\r\n|\r|\n/g, "<br>"); %></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <ul>
+                <li>By Molly</li>
+                <li>Vs Code</li>
+                <li>Java Script</li>
+                <li>Copyright ©<%= new Date().getFullYear();%></li>
+            </ul>
+        </div>
+    </footer>
+</html>

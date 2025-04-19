@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+
+<div class="login-centering-container">
+    <div class="login-container">
+        <h1 class="login-title">
+            Admin Login
+        </h1>
+        <form action="/submit" method="post">
+            <input class="log-input" type="text" name="userName" placeholder="User Name">
+            <input class="log-input" type="password" name="password" placeholder="Password">
+            <input class="log-btn" type="submit" value="ENTER">
+        </form>
+    </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>
+<script src="../functions/log.js"></script>
+
+
+
+
+</body>
